@@ -1,0 +1,7 @@
+<h1>Here are the bikes at the <%= @our_dealer.name() %> dealership:</h1>
+
+<ul>
+  <% @bikes.each() do |bike| %>
+  <li><%= bike.make() %>,<%=bike.model() %>,<%=bike.year() %></li>
+  <% end %>
+</ul>
