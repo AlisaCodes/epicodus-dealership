@@ -1,5 +1,6 @@
 require('rspec')
 require('dealership')
+require('bicycle')
 
 describe(Dealership) do
   before() do
@@ -48,6 +49,15 @@ describe(Dealership) do
       test_dealership2 = Dealership.new("Rivelo")
       test_dealership2.save()
       expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
+    end
+  end
+
+  describe('#add_bike') do
+    it('adds a bike to a dealership') do
+      test_dealership = Dealership.new("Recycled Cycles")
+      test_bike = Bicycle.new("Rivendell", "Hunqapillar", 2012)
+      test_dealership.add_bike(test_bike)
+      expect(test_dealership.bikes()).to(eq([test_bike]))
     end
   end
 end
