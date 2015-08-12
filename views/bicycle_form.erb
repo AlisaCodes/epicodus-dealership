@@ -1,0 +1,14 @@
+<h1> Add Bicycles to <%= @our_dealer.name() %>!</h1>
+
+<p>Add a bicycle here:</p>
+
+<form action="/bicycles/<%= @our_dealer.id() %>" method="post">
+
+  <label for="make">Bicycle Make:</label>
+  <input id="make" name="make" type="text">
+  <label for="model">Bicycle Model:</label>
+  <input id="model" name="model" type="text">
+  <label for="year">Bicycle Year:</label>
+  <input id="year" name="year" type="text">
+  <button type="submit">Add Bike</button>
+</form>

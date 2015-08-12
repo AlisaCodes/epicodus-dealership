@@ -3,7 +3,7 @@
 ##### App to see and add Bicycle Dealerships and the bicycles that they carry
 
 
-#### By _** Alisa Colon & Vaughn Dice**_
+#### By _**Alisa Colon & Vaughn Dice**_
 
 ## Setup
 
