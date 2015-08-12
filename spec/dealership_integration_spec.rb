@@ -20,10 +20,18 @@ describe("the dealer form path", {:type => :feature}) do
 end
 
 describe("the dealer form to dealerships path", {:type => :feature}) do
-  it("it submits the form and takes user to dealerships list") do
+  it("submits the form and takes user to dealerships list") do
     visit('/dealerships/new')
     fill_in('name', :with => 'Recycled Cycles')
     click_button('Add Dealership')
     expect(page).to have_content("Recycled Cycles")
+  end
+end
+
+describe("the dealership path", {:type => :feature}) do
+  it("takes the user to the unique dealership") do
+    visit('/dealerships')
+    click_link('Recycled Cycles')
+    expect(page).to have_content("Welcome to Recycled Cycles!")
   end
 end
