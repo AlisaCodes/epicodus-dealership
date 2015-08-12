@@ -2,8 +2,9 @@ class Dealership
   @@dealerships = []
 
   define_method(:initialize) do |name|
+    # every Dealership has these things:
     @name = name
-    @id = 1
+    @id = @@dealerships.length() + 1
     @bikes = []
   end
 
@@ -29,5 +30,15 @@ class Dealership
 
   define_singleton_method(:clear) do
     @@dealerships.clear()
+  end
+
+  define_singleton_method(:find) do |dealer_id|
+    found_dealership = nil
+    @@dealerships.each() do |dealership|
+      if dealership.id == dealer_id
+        found_dealership = dealership
+      end
+    end
+    found_dealership
   end
 end

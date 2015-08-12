@@ -35,9 +35,19 @@ describe(Dealership) do
     end
   end
 
-  describe('#.all') do
+  describe('.all') do
     it('it is empty at first') do
     expect(Dealership.all()).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it('returns a dealership by its id number') do
+      test_dealership = Dealership.new("Recycled Cyles")
+      test_dealership.save()
+      test_dealership2 = Dealership.new("Rivelo")
+      test_dealership2.save()
+      expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
     end
   end
 end
