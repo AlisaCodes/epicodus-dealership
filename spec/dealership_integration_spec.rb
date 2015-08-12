@@ -35,3 +35,11 @@ describe("the dealership path", {:type => :feature}) do
     expect(page).to have_content("Welcome to Recycled Cycles!")
   end
 end
+
+describe("the dealership bicycle list path", {:type => :feature}) do
+  it("takes the user to the unique dealership's bicycle list") do
+    visit('/dealerships/1')
+    click_link('See Bicycle List')
+    expect(page).to have_content("Here are the bikes at the Recycled Cycles dealership:")
+  end
+end
