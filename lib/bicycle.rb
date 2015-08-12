@@ -5,7 +5,6 @@ class Bicycle
     @make = make
     @bike_model = bike_model
     @year = year
-
   end
 
   define_method(:make) do
