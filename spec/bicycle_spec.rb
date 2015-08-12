@@ -26,4 +26,18 @@ describe(Bicycle) do
       expect(test_bike.year()).to(eq(2013))
     end
   end
+
+  describe('#save') do
+    it('add bicycles to an array') do
+      test_bike = Bicycle.new("Cinelli", "Supercorse", 2019)
+      test_bike.save()
+      expect(Bicycle.all()).to(eq([test_bike]))
+    end
+  end
+
+  describe('.all') do
+    it('starts empty') do
+      expect(Bicycle.all).to(eq([]))
+    end
+  end
 end

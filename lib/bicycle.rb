@@ -20,7 +20,15 @@ class Bicycle
     @year
   end
 
+  define_method(:save) do
+    @@bicycles.push(self)
+  end
+
   define_singleton_method(:clear) do
     @@bicycles.clear()
+  end
+
+  define_singleton_method(:all) do
+    @@bicycles
   end
 end
